@@ -5,7 +5,7 @@
 print("vamos calcular o tamanho da coleira do seu cão! ")
 coleira = float(input("qual o tamanho da coleira?"))
 sapatinho = coleira*2
-fucinheira = coleira*3 
+fucinheira = sapatinho*3 
 print("os tamanhos do sapatinho e da fucinheira:")
 print(f"o tamanho do sapato é :{sapatinho:.2f} ")
 print(f"o tamanho da fucinheira é:{fucinheira:.2f} ")
