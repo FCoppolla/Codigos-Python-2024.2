@@ -5,3 +5,5 @@ peso = float(input("Qual o seu peso? "))
 altura = float(input("qual a sua altura? ")) 
 imc = peso/(altura*altura)
 print(f"seu imc é:{imc:.2f}")
+#(:.2f)no print anterior é para controlar a quantidade de números após o ponto
+

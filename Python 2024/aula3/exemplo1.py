@@ -1,3 +1,4 @@
+#para fazer um calculo do imposto pago sobre o produto
 print("vamos calcular o imposto! coloque o valor do produto")
 valorproduto = float(input("coloque o valor do produto"))
 imposto = valorproduto * 0.1
