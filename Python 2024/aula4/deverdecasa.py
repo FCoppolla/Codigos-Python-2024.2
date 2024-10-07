@@ -11,6 +11,3 @@ if ( num % 5 == 0 ):
 
 else: 
     print(f"{num} não é divisível por 5.")
-    
-
-    
