@@ -1,3 +1,7 @@
+#faça um programa que peça o usuario para inserir 5 numeros. O programa deve calcular a soma acumulada desses numeros e exibir no resultado final
+#peça ao usuario para inserir 5 numeros. 
+#requisitos: use uma variavel acumuladora para armazenar a soma dos numeros. apos o usuario inserir todos os numeros exiba a soma total
+
 print("Bem-vindo à Oficina Grande Monte!")
 
 Escolhaproduto = int(input(
