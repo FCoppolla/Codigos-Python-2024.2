@@ -1,17 +1,7 @@
-#faça um programa que peça o usuario para inserir 5 numeros. O programa deve calcular a soma acumulada desses numeros e exibir no resultado final
-#peça ao usuario para inserir 5 numeros. 
-#requisitos: use uma variavel acumuladora para armazenar a soma dos numeros. apos o usuario inserir todos os numeros exiba a soma total
-
+#programa oficina grande monte!
 print("Bem-vindo à Oficina Grande Monte!")
 
-Escolhaproduto = int(input(
-    "-------------------Bem Vindo a Oficina Grande Monte, qual opção você gostaria?---------------------\n"
-    "Digite 1 para troca de óleo - R$100.00\n"
-    "Digite 2 para troca de filtro de ar - R$130.00\n"
-    "Digite 3 para garrafa de óleo - R$40.00\n"
-    "Digite 4 para fluido de freio - R$130.00\n"
-    "Digite 5 para combo total - R$320.00\n"))
-
+Escolhaproduto = int(input("-------------------Bem Vindo a Oficina Grande Monte, qual opção você gostaria?---------------------\n""Digite 1 para troca de óleo - R$100.00\n""Digite 2 para troca de filtro de ar - R$130.00\n""Digite 3 para garrafa de óleo - R$40.00\n""Digite 4 para fluido de freio - R$130.00\n""Digite 5 para combo total - R$320.00 \n>"))
 item1 = "troca de óleo"
 item2 = "troca de filtro de ar"
 item3 = "garrafa de óleo"

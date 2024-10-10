@@ -2,6 +2,7 @@
 #peça ao usuario para inserir 5 numeros. 
 #requisitos: use uma variavel acumuladora para armazenar a soma dos numeros. apos o usuario inserir todos os numeros exiba a soma total
 
+#exibindo a soma acumulada
 soma_acumulada = 0
 
 for i in range(5):
