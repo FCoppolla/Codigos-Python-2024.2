@@ -118,3 +118,7 @@ elif Escolhaproduto == 4:
             print(f"Seu pedido é {item4}, {item3}, {item2} e {item1}, totalizando R$ 320.00")
         else:
             print(f"Seu pedido é {item4} + {item3}, totalizando R$ 230.00")
+
+elif (Escolhaproduto == 5):
+    print("voce escolheu o nosso combo!")
+    exit()
