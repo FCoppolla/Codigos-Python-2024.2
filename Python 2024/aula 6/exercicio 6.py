@@ -3,7 +3,7 @@
 
 
 num1 = int(input("digite um numero:"))
-num2 = int (input("digite mais um numero:"))
+num2 = int(input("digite mais um numero:"))
 
 
 operação = int(input("escolha uma das operaçoes seguindo o menu\n 1 - soma \n 2 -subitração\n 3 - multiplicação\n 4 - divisão \n >"))
