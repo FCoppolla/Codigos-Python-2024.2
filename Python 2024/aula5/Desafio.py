@@ -6,7 +6,7 @@
 soma_acumulada = 0
 
 for i in range(5):
-    numero = float(input(f"Insira o {i + 1}º número: "))
+    numero = float(input(f"Insira o {i + 1} número: "))
     soma_acumulada += numero 
     
 print(f"A soma total dos números inseridos é: {soma_acumulada}")
