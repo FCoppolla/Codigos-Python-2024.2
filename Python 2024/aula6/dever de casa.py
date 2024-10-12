@@ -1,40 +1,47 @@
-#Dever de casa:
-#Desenvolva um programa que simula um sistema de reciclagem com contagem dos materiais reciclados. O programa deve:
+# Programa de reciclagem com contagem de materiais
 
-#Exibir uma mensagem de boas-vindas ao usuário: "Bem-vindo ao programa de reciclagem!".
-#Solicitar ao usuário que informe o tipo de material que ele deseja reciclar, entre as opções: papel, plástico, vidro, metal, orgânico ou resíduos não recicláveis.
-#Com base no material informado, o programa deve informar a cor da lixeira correta para descarte e contabilizar a quantidade de cada material reciclado:
+print("Bem-vindo ao programa de reciclagem!")
 
-#Papel: lixeira azul.
-#Plástico: lixeira vermelha.
-#Vidro: lixeira verde.
-#Metal: lixeira amarela.
-#Orgânico: lixeira marrom.
-#Resíduos não recicláveis: lixeira cinza.
+# Inicializa o contador de cada material
+contador_papel = 0
+contador_plastico = 0
+contador_vidro = 0
+contador_metal = 0
+contador_outros = 0
 
-#Se não for reconhecido, exibir a mensagem: "Erro tente novamente e não contabilizar na contagem de nenhuma lixeira. 
+continuar = 's'
 
-#Perguntar ao usuário se ele deseja continuar reciclando. Se o usuário digitar 's', o programa deve repetir o processo; caso contrário, o programa deve exibir um resumo da reciclagem com a quantidade de materiais reciclados e a mensagem: "Obrigado por contribuir com a reciclagem!". ''''
-
-print("Bem vindo ao programa de reciclagem!")
-
-material = input("Qual material você deseja reciclar?\n 1 - papel\n 2 - plástico\n 3 - vidro\n 4 - metal\n  5 - orgânico ou resíduos\n 6 - nao reciclaveis \n")
-
-materiais = {'1': 'papel','2': 'plástico','3': 'vidro','4': 'metal','5': 'orgânicos','6': 'nao reciclaveis'}
-
-lixeiras = {'1': 'azul','2': 'vermelha','3': 'verde','4': 'amarela', '5': 'marrom', '6': 'cinza'}
-
-
-if material in materiais:
-    print(f"A lixeira designada é {lixeiras[material]}")
-else:
-    print("Erro: tente novamente.")
+while continuar.lower() == 's':
+    # Solicita ao usuário o tipo de material para reciclar
+    material = input("Digite o tipo de material para reciclar (papel, plástico, vidro, metal): ").lower()
     
-continuar = input("Deseja reciclar outro material? (s/n): ")
-if continuar.lower() != 's':
+    # Verifica e contabiliza o material
+    if material == 'papel':
+        print("Papel deve ser colocado na lixeira azul.")
+        contador_papel += 1
+    elif material == 'plástico' or material == 'plastico':
+        print("Plástico deve ser colocado na lixeira vermelha.")
+        contador_plastico += 1
+    elif material == 'vidro':
+        print("Vidro deve ser colocado na lixeira verde.")
+        contador_vidro += 1
+    elif material == 'metal':
+        print("Metal deve ser colocado na lixeira amarela.")
+        contador_metal += 1
+    else:
+        print("Material não reconhecido ou não reciclável.")
+        contador_outros += 1
     
-    if continuar == 'n':
-        print ("muito obrigado por reciclar conosco!... O planeta agradece!")
-    
-    
-    
+    # Pergunta se o usuário deseja continuar
+    continuar = input("Deseja reciclar outro material? (s/n): ")
+
+# Exibe o resumo da reciclagem
+print("\nResumo da reciclagem:")
+print(f"Papel reciclado: {contador_papel}")
+print(f"Plástico reciclado: {contador_plastico}")
+print(f"Vidro reciclado: {contador_vidro}")
+print(f"Metal reciclado: {contador_metal}")
+print(f"Materiais não reconhecidos ou não recicláveis: {contador_outros}")
+
+print("\nObrigado por contribuir com a reciclagem!")
+
