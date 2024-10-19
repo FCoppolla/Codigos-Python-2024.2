@@ -2,8 +2,19 @@
 
 import random
 
-def gerar_numeros(qtd):
-    return random.sample(range(1, 201), qtd)
+print("Você gostaria de adivinhar 1 ou 2 números simultaneamente?")
+quantidade_numeros = int(input("Escolha a quantidade de números (1 ou 2): "))
+
+# Inicializa os números e o status de acerto
+if quantidade_numeros >= 1:
+    numero1 = random.randint(1, 200)
+    acertou1 = False
+if quantidade_numeros >= 2:
+    numero2 = random.randint(1, 200)
+    # Garante que o segundo número seja diferente do primeiro
+    while numero2 == numero1:
+        numero2 = random.randint(1, 200)
+    acertou2 = False
 
 print("Qual o nível de dificuldade você gostaria de jogar?")
 print("1 - Fácil (10 tentativas)")
@@ -22,30 +33,41 @@ else:
     print("Nível inválido")
     exit()
 
-quantidade_numeros = int(input("Quantos números você quer adivinhar? (1 ou 2): "))
+for tentativa in range(1, tentativas + 1):
+    palpite = int(input(f"Tentativa {tentativa}: Adivinhe o número (entre 1 e 200): "))
 
-if quantidade_numeros not in [1, 2]:
-    print("Quantidade inválida. Escolha 1 ou 2.")
-    exit()
+    if quantidade_numeros >= 1 and not acertou1:
+        if palpite == numero1:
+            print("Parabéns! Você acertou o número 1!")
+            acertou1 = True
+        elif palpite < numero1:
+            print(f"O número 1 é maior que {palpite}.")
+        else:
+            print(f"O número 1 é menor que {palpite}.")
 
-numeros = gerar_numeros(quantidade_numeros)
+    if quantidade_numeros >= 2 and not acertou2:
+        if palpite == numero2:
+            print("Parabéns! Você acertou o número 2!")
+            acertou2 = True
+        elif palpite < numero2:
+            print(f"O número 2 é maior que {palpite}.")
+        else:
+            print(f"O número 2 é menor que {palpite}.")
 
-while tentativas > 0:
-    palpite = input(f"Tentativas restantes: {tentativas}. Adivinhe os números (separados por espaço): ")
-    palpites = list(map(int, palpite.split()))
-
-    acertos = [num for num in palpites if num in numeros]
-    errou = [num for num in palpites if num not in numeros]
-
-    if len(acertos) == quantidade_numeros:
-        print("Parabéns! Você acertou todos os números!")
+    # Verifica se todos os números foram adivinhados
+    if ((quantidade_numeros >= 1 and acertou1) and
+        (quantidade_numeros < 2 or acertou2)):
+        print("Você adivinhou todos os números! Parabéns!")
         break
-    else:
-        if acertos:
-            print(f"Você acertou: {acertos}")
-        if errou:
-            print(f"Números errados: {errou}")
+else:
+    print(f"Você não conseguiu adivinhar todos os números em {tentativas} tentativas.")
+    if quantidade_numeros >= 1 and not acertou1:
+        print(f"O número 1 era {numero1}.")
+    if quantidade_numeros >= 2 and not acertou2:
+        print(f"O número 2 era {numero2}.")
+
+
         tentativas -= 1
 
 if tentativas == 0:
-    print(f"Você não conseguiu adivinhar os números em {tentativas + 1} tentativas. Os números eram: {numeros}.")
+    print(f"Você não conseguiu adivinhar os números em {tentativas + 1} tentativas. Os números eram: {numero1} e {numero2}.")
