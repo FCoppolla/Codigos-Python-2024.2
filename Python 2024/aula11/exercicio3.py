@@ -5,6 +5,6 @@ def converter(celsius):
     fahrenheit = (celsius * 9/5) + 32
     return fahrenheit
 
-temperatura_celsius = int(input("digite um numero:\n >"))
+temperatura_celsius = float(input("digite um numero:\n >"))
 temperatura_fahrenheit = converter(temperatura_celsius)
 print(f"{temperatura_celsius}°C é igual a {temperatura_fahrenheit}°F")
