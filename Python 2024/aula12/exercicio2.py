@@ -20,4 +20,3 @@ while True:
     
 print("o treino acabou...")
 
-print(lista)
